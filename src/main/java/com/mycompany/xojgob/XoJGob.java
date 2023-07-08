@@ -124,7 +124,6 @@ public class XoJGob {
             str = sc.next().toLowerCase();
         }
         if (str.equals("n")) {
-            isEnd = true;
             System.out.println("GoodBye!!");
             return false;
         }
@@ -147,8 +146,7 @@ public class XoJGob {
         }
         //check 3 style
         if (isEnd == false) {
-            if (checkDraw()) {
-                isEnd = true;
+            if (checkDraw()) {            
                 System.out.println("+--------------------+");
                 System.out.println("|    !!! Draw !!!    |");
                 System.out.println("+--------------------+");
