@@ -49,6 +49,19 @@ public class XoJGob {
     }
 
 
+    public boolean checkDraw() {
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list.length; j++) {
+                if (list[i][j].toLowerCase().equals("-")) {
+                    return false;
+                }
+
+            }
+
+        }
+        return true;
+    }
+
     public void showTurn() {
         System.out.println("--------------------------------");
         System.out.println("Turn >>> " + turn.toUpperCase());
