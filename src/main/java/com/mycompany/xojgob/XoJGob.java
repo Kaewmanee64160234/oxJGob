@@ -91,7 +91,14 @@ public class XoJGob {
         return false;
     }
 
-
+   public boolean checkNawTang() {
+        for (int i = 0; i < list[row - 1].length; i++) {
+            if (!list[i][column - 1].toLowerCase().equals(turn)) {
+                return false;
+            }
+        }
+        return true;
+    }
     public void showTurn() {
         System.out.println("--------------------------------");
         System.out.println("Turn >>> " + turn.toUpperCase());
