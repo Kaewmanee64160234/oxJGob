@@ -61,6 +61,16 @@ public class XoJGob {
         }
         return true;
     }
+      public boolean checkNawnond() {
+        for (int j = 0; j < list[row - 1].length; j++) {
+            if (!list[row - 1][j].toLowerCase().equals(turn)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 
     public void showTurn() {
         System.out.println("--------------------------------");
