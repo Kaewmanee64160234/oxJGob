@@ -163,7 +163,12 @@ public class XoJGob {
         }
 
     }
-     
+      public void process() {
+        showTurn();
+        showTable();
+        inputRowandColumn();
+
+    }
        public void inputRowandColumn() {
         System.out.print("Input row :");
         row = sc.nextInt();
@@ -195,8 +200,18 @@ public class XoJGob {
 
     }
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+    
         XoJGob xo = new XoJGob();
+         xo.turn = "x";
+
+        xo.checkStart();
+        if (xo.confirm == false) {
+            System.out.println("Goodbye!!");
+            xo.isEnd = true;
+        }
+        while (!xo.isEnd) {
+            xo.process();
+        }
 
     }
 }
