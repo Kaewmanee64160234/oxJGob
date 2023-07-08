@@ -70,6 +70,26 @@ public class XoJGob {
 
         return true;
     }
+       public boolean checkTayang() {
+        if (row - 1 == column - 1) {
+            for (int i = 0; i < list.length; i++) {
+                if (!list[i][i].toLowerCase().equals(turn)) {
+                    return false;
+                }
+
+            }
+            return true;
+        }
+        if ((row + column) - 2 == list.length - 1) {
+            for (int i = 0; i < list.length; i++) {
+                if (!list[i][list.length - 1 - i].toLowerCase().equals(turn)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
 
 
     public void showTurn() {
