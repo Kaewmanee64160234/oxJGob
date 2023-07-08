@@ -30,7 +30,20 @@ public class XoJGob {
         }
 
     }
- 
+ public void checkStart() {
+        System.out.println("Welcome to XO Game");
+        System.out.print("Start XO Games? (Y/N) : ");
+        start = sc.nextLine().toLowerCase();
+        while (!start.equals("y") && !start.equals("n")) {
+            System.out.print("Start XO Games? (Y/N) : ");
+            start = sc.nextLine().toLowerCase();
+        }
+        if (start.equals("n")) {
+            confirm = false;
+        } else {
+            confirm = true;
+        }
+    }
   public void changeTurn() {
         if (turn.equals("x")) {
             turn = "o";
