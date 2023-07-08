@@ -163,6 +163,37 @@ public class XoJGob {
         }
 
     }
+     
+       public void inputRowandColumn() {
+        System.out.print("Input row :");
+        row = sc.nextInt();
+        System.out.print("Input column :");
+        column = sc.nextInt();
+        if (((row > 0 && row < 4) && (column > 0 && column < 4))) {
+            if (list[row - 1][column - 1].equals("-")) {
+                list[row - 1][column - 1] = turn.toUpperCase();
+
+            } else {
+
+                while ((!(row > 0 && row < 4) && !(column > 0 && column < 4)) && (!list[row - 1][column - 1].equals("-"))) {
+
+                    System.out.println("that row and Column is already exits.");
+                    System.out.print("Input row :");
+                    row = sc.nextInt();
+                    System.out.print("Input column :");
+                    column = sc.nextInt();
+                }
+                return;
+
+            }
+
+            checkWin();
+            changeTurn();
+        } else {
+            return;
+        }
+
+    }
     public static void main(String[] args) {
         System.out.println("Hello World!");
         XoJGob xo = new XoJGob();
