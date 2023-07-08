@@ -116,6 +116,53 @@ public class XoJGob {
         System.out.println("--------------------------------");
         System.out.println("Turn >>> " + turn.toUpperCase());
     }
+     public boolean continute() {
+        System.out.print("You want to play again (Y/N) : ");
+        String str = sc.next();
+        while (!str.toLowerCase().equals("n") && !str.toLowerCase().equals("y")) {
+            System.out.print("You want to play again (Y/N) : ");
+            str = sc.next().toLowerCase();
+        }
+        if (str.equals("n")) {
+            isEnd = true;
+            System.out.println("GoodBye!!");
+            return false;
+        }
+
+        return true;
+    }
+     public void checkWin() {
+        if (checkNawnond() || checkNawTang() || checkTayang()) {
+
+            System.out.println("+--------------------+");
+            System.out.println("|    !!! " + turn.toUpperCase() + " Win !!!   |");
+            System.out.println("+--------------------+");
+            showTable();
+            if (continute()) {
+                reset();
+            } else {
+                isEnd = true;
+
+            }
+        }
+        //check 3 style
+        if (isEnd == false) {
+            if (checkDraw()) {
+                isEnd = true;
+                System.out.println("+--------------------+");
+                System.out.println("|    !!! Draw !!!    |");
+                System.out.println("+--------------------+");
+                showTable();
+                if (continute()) {
+                    reset();
+                } else {
+                    isEnd = true;
+
+                }
+            }
+        }
+
+    }
     public static void main(String[] args) {
         System.out.println("Hello World!");
         XoJGob xo = new XoJGob();
