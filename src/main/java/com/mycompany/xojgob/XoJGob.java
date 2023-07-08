@@ -38,6 +38,16 @@ public class XoJGob {
             turn = "x";
         }
     }
+  
+  
+    public void reset() {
+        for (int i = 0; i < list.length; i++) {
+            for (int j = 0; j < list.length; j++) {
+                list[i][j] = "-";
+            }
+        }
+    }
+
 
     public void showTurn() {
         System.out.println("--------------------------------");
