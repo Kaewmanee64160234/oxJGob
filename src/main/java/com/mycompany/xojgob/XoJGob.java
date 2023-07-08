@@ -30,9 +30,22 @@ public class XoJGob {
         }
 
     }
+ 
+  public void changeTurn() {
+        if (turn.equals("x")) {
+            turn = "o";
+        } else {
+            turn = "x";
+        }
+    }
+
+    public void showTurn() {
+        System.out.println("--------------------------------");
+        System.out.println("Turn >>> " + turn.toUpperCase());
+    }
     public static void main(String[] args) {
         System.out.println("Hello World!");
         XoJGob xo = new XoJGob();
-        xo.showTable();
+
     }
 }
